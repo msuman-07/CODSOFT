@@ -1,2 +1,2 @@
 # CODSOFT
-AI Virtual Internship
+AI Online Internship
