@@ -1,0 +1,30 @@
+import re 
+#using re to match the string phrases used 
+
+def chatbot_response(user_input):
+    user_input = user_input.lower()
+    
+    if re.search(r"\bhi\b|\bhello\b", user_input, re.IGNORECASE):
+        return "Hello! How can I help you?"
+    elif re.search(r"name", user_input, re.IGNORECASE):
+        return "I'm Chatbot, your virtual assistant."
+    elif re.search(r"how are you", user_input, re.IGNORECASE):
+        return "I'm just a chatbot, but I'm doing well! How about you?"
+    elif re.search(r"age", user_input, re.IGNORECASE):
+        return "I'm a chatbot, you idiot!"
+    elif re.search(r"height|weight", user_input, re.IGNORECASE):
+        return "I don't have a physical form, so no height or weight!"
+    elif re.search(r"bye", user_input):
+        return "Goodbye! Have a nice day!"
+    else:
+        return "I didn't understand that. Could you rephrase?"
+
+# Chat loop
+print("Chatbot: Hi! Type 'bye' to end the conversation.")
+while True:
+    user_input = input("You: ")
+    if user_input.lower() == "bye":
+        print("Chatbot: Goodbye!")
+        break
+    response = chatbot_response(user_input)
+    print(f"Chatbot: {response}")
